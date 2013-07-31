@@ -27,10 +27,11 @@ for(counter=1;counter<2;counter++){
 			//scrapeid = $('meta[name="description"]').attr('content');
 			//console.log ('ID:' + $('a[class="schedule_download"]').attr('href'));
 
-			console.log ('Title:' + $('#property-title h2').text());
-			console.log ('Address:' + $('#property-title h3').text());
-			console.log ('Description:' + $('.desc').text());
-			console.log ('Summary:' + $('.grey').text());
+			console.log ('Title: ' + $('#property-title h2').text());
+			console.log ('Address: ' + $('#property-title h3').text());
+			console.log ('Description: ' + $('.desc').text());
+			console.log ('Summary: ' + $('.grey').text());
+			console.log('Images: ');
 			//console.log ('Image:' + $('.slideshow img').attr('src'));
 			//console.log ('Image:' + $('.photos a:contains("View image")').attr('href'));
 			links = $('.photos a');
