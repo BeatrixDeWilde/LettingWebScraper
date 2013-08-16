@@ -1,0 +1,26 @@
+var request = require('request'); // lets you connect to web pages
+
+var cheerio = require('cheerio'); // cheerio mimics the DOM and jQuery/CSS style selectors
+
+
+
+
+var url = 'http://www.lettingweb.com/flats-to-rent/edinburgh?currentPage=1&perpage=100';
+
+for(counter=1;counter<2;counter++){
+	var url = 'http://www.lettingweb.com/flats-to-rent/edinburgh?currentPage=' + counter + '&perpage=100';
+	request(url, function(err, resp, body) {
+
+	if (err)
+
+		throw err;
+
+	$ = cheerio.load(body);
+
+	$('.property .element a:contains()').each(function() {
+
+		console.log ($(this).attr('href'));
+		//output 'http://www.lettingweb.com' + $(this).attr('href' to queue
+	});
+});
+}

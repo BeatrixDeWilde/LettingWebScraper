@@ -1,0 +1,19 @@
+request (/*input url from queue*/), function(err,resp,body) {
+			//looks for meta tag with property og:url and takes the url that is assigned to content and then prints it out 
+			$ = cheerio.load(body);
+			//scrapeid = $('meta[name="description"]').attr('content');
+			//console.log ('ID:' + $('a[class="schedule_download"]').attr('href'));
+
+			console.log ('Title: ' + $('#property-title h2').text());
+			console.log ('Address: ' + $('#property-title h3').text());
+			console.log ('Description: ' + $('.desc').text());
+			console.log ('Summary: ' + $('.grey').text());
+			console.log('Images: ');
+			//console.log ('Image:' + $('.slideshow img').attr('src'));
+			//console.log ('Image:' + $('.photos a:contains("View image")').attr('href'));
+			links = $('.photos a');
+			$(links).each(function (i,link){
+					console.log($(link).text() + '\n ' + $(link).attr('href'));
+			});	
+
+		});
